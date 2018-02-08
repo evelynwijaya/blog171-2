@@ -6,6 +6,7 @@ class User_model extends CI_Model {
       parent::__construct();
   }
 
+
   /**   * Menambahkan user baru   */
   public function register(){
     // membuat user_ID otomatis
@@ -26,7 +27,6 @@ class User_model extends CI_Model {
     $this->db->insert( 'users', $data );
   }
 
-}
   public function user( $email ){
 
     $sql = "SELECT * FROM users WHERE email='".$email."'";
@@ -40,4 +40,9 @@ class User_model extends CI_Model {
     // return false;
   }
 
+  public function userpost(){
+    $query = $this->db->query("SELECT users.nama, blogs.judul FROM users
+      INNER JOIN blogs USING('".$user_ID."')");
+      return $query->result_array();
+    }
 }

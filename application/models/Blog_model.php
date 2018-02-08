@@ -17,6 +17,7 @@ class Blog_model extends CI_Model {
       return $query->result_array();
     }
 
+
     /**   * menyimpan data blog baru   */
     public function submit(){
       // membuat blog_ID otomatis

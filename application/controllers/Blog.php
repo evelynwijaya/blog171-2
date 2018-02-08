@@ -13,7 +13,6 @@ class Blog extends CI_Controller {
 	public function index( $blog_ID )	{
       $data['blog'] = $this->blog_model->blog( $blog_ID );
       $this->load->template( 'detail_blog', $data );
-
 	}
 
   public function post(){

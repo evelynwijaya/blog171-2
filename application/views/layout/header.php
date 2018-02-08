@@ -25,8 +25,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="/asset/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="/asset/css/jquery.timepicker.css">
 
-
-
     <link rel="stylesheet" href="/asset/css/icomoon.css">
     <link rel="stylesheet" href="/asset/css/style.css">
     <link rel="stylesheet" href="/asset/css/costum.css">

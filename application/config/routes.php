@@ -10,7 +10,8 @@ $route['user/signin']     = 'user/signin';     // proses login user
 $route['signout']         = 'user/signout';    // proses login user
 $route['user/reg']        = 'user/register';   // halaman form registrasi user
 $route['user/reg_submit'] = 'user/regsubmit';  // proses registrasi user
-$route['user/(any:)']     = 'user/$1';         // halaman profil user dengan user_id $1
+$route['blogpost']        = 'user/userpost';
+$route['user/(any:)']     = 'user/profil/$1';  // halaman profil user dengan user_id $1
 
 
 

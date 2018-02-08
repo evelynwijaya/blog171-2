@@ -16,5 +16,5 @@ class Welcome extends CI_Controller {
 		$this->load->template('home', $data);
 	}
 
-
+	
 }

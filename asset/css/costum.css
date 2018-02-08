@@ -1,21 +1,37 @@
-.btn-group {
-    color: #fff;
-    background-color: #dc3545;
-    border-color: #dc3545;
-    margin-top: 5px;
+#bt_edit {
+  color: #ff0;
 }
 
+.btn.btn-primary {
+    background: #F00;
+    border-color: #F00;
+    color: #000;
+    align: center;
+}
+h1, h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+    line-height: 1.45;
+    color: #000;
+    font-family: "Playfair Display", serif;
+    font-weight: bold;
+    text-align: center;
+}
 
+.btn.btn-primary:hover, .btn.btn-primary:focus, .btn.btn-primary:active {
+    border-color: #c65700;
+    background: #f00;
+}
 
-#id{
+.ftco-bg-dark {
+    background: #000;
+}
+
+p{
   text-align: center;
 }
 
-
-
-.btn.btn-primary {
-    background: #F96D00;
-    border-color: #F96D00;
-    color: #fff;
-    align:center;
+img {
+    vertical-align: middle;
+    border-style: none;
+    width: 350px;
+    height: 200px;
 }

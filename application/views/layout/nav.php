@@ -8,8 +8,7 @@
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active"><a href="/home" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="#section-offer" class="nav-link">Offer</a></li>
-        <li class="nav-item"><a href="#section-menu" class="nav-link">Menu</a></li>
+        <li class="nav-item"><a href="/blog/post" class="nav-link">Post Resep</a></li>
 
 
 <?php
@@ -24,8 +23,8 @@
               Profile
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/blog/post">Post Resep</a>
-                <a class="dropdown-item" href="/user/profil">Profil</a>
+                <a class="dropdown-item" href="/user/<?= $this->session->uid ?>">Profil</a>
+                <a class="dropdown-item" href="/blogpost">Blog Posted</a>
               <a class="dropdown-item" href="/signout">Logout</a>
             </div>
           </div>

@@ -7,9 +7,15 @@ class User extends CI_Controller {
      parent::__construct();
 
     $this->load->model('user_model');
-    $this->load->model('blog_model');
 
   }
+
+  public function userpost()
+	{
+		$data['userpost'] = $this->user_model->userpost();
+		$this->load->template('blogpost', $data);
+	}
+
 
   public function index(){
   }
@@ -67,12 +73,20 @@ class User extends CI_Controller {
 
 
 
-  // public function profil($nama){
-  //   $sql = "SELECT nama FROM users";
-  //
-  //   $hasil= mysqli_query($db, $sql);
-  //     $this->load->template('profil');
-  //
-  // }
+  public function profil($nama){
+    $sql = "SELECT nama FROM users";
+
+    $hasil= mysqli_query($db, $sql);
+    $data = $hasil->row_array();
+    $this->load->template('profil', $data);
+
+  }
+
+
+
+
+
+
+
 
 }
