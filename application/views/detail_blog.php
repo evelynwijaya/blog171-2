@@ -2,7 +2,11 @@
 <div class="top">
   <br><br><br><br>
 </div>
-<?= $blog['foto']."<br>" ?>
+
+<?php
+echo "<img src=\"/asset/images/blog/".$blog['blog_ID'].".".$blog['foto']."\">";
+?>
+
 <h1><?= $blog['judul']."<br>" ?></h1>
 <h4>Bahan Yang dibutuhkan:</h4>
 <p>
@@ -15,14 +19,19 @@
 
 <h4>DiTulis Oleh:</h4>
 <p>
-
-   <?=$blog['nama']."<br>"?>
+  <?php
+  echo "<a href='/user/" . $blog['user_ID'] ."'>" . $blog['nama']."<a><br>";
+  ?>
 </p>
-<div class="form-group" id="bt_edit">
-  <input type="submit" class="btn btn-primary btn-lg" value="Edit">
-</div>
 
-<div class="form-group" id="bt_delete">
-  <input type="submit" class="btn btn-primary btn-lg" value="Delete">
-</div>
+
+
+
+    <div class="form-group" id="bt_edit">
+      <a href="/blog/delete/<?= $blog['blog_ID'] ?>">DELETE</a><br>
+    </div>
+    <div class="form-group" id="bt_delete">
+      <a href="/blog/edit/<?= $blog['blog_ID'] ?>">EDIT</a><br>
+    </div>
+
 <br>

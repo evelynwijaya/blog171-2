@@ -10,12 +10,6 @@ class User extends CI_Controller {
 
   }
 
-  public function userpost()
-	{
-		$data['userpost'] = $this->user_model->userpost();
-		$this->load->template('blogpost', $data);
-	}
-
 
   public function index(){
   }
@@ -73,11 +67,8 @@ class User extends CI_Controller {
 
 
 
-  public function profil($nama){
-    $sql = "SELECT nama FROM users";
-
-    $hasil= mysqli_query($db, $sql);
-    $data = $hasil->row_array();
+  public function profil($user_ID){
+    $data['user'] = $this->user_model->userbyid($user_ID);
     $this->load->template('profil', $data);
 
   }

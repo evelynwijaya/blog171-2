@@ -7,8 +7,17 @@ class Blog_model extends CI_Model {
 
    /**   * data satu blog berdasarkan blog_ID   */
     public function blog( $blog_ID ){
-      $query = $this->db->query("SELECT * FROM blogs WHERE blog_ID='".$blog_ID."'");
-      return $query->row_array();
+      $query = $this->db->query("SELECT
+                                  user_ID,
+                                  blog_ID,
+                                  nama,
+                                  judul,
+                                  bahan,
+                                  cara,
+                                  foto
+                                FROM blogs INNER JOIN users USING (user_ID)
+                                WHERE blog_ID ='".$blog_ID."'");
+        return $query->row_array();
     }
 
     /**   * menghasilkan daftar blog berdasarkan tanggal submit terbaru   */
@@ -42,4 +51,37 @@ class Blog_model extends CI_Model {
       // simpan ke database dalam tabel 'blogs'
       $this->db->insert( 'blogs', $data );
     }
+
+    public function edit($blog_id){
+
+      //ekstension gambar
+    //  $ext = pathinfo($_FILES['foto']['name'],PATHINFO_EXTENSION);
+      // menyiapkan data
+      $data = [
+                'blog_ID' => $blog_id,
+                'judul' => $this->input->post('judul'),
+                'bahan' => $this->input->post('bahan'),
+                'cara' => $this->input->post('cara'),
+                'user_ID' => $this->session->uid,
+                'tanggal' => date('Y-m-d H:i:s')
+                //'foto' => $ext
+              ];
+      // simpan data ke dalam session
+      $this->session->blog_id = $blog_id;
+      $this->db->where('blog_id',$blog_id);
+      // simpan ke database dalam tabel 'blogs'
+      $this->db->update( 'blogs', $data );
+    }
+
+    public function delete($blog_ID){
+      $query = $this->db->query("DELETE FROM blogs WHERE blog_ID ='".$blog_ID."'");
+
+    }
+
+
+
+
+
+
+
 }

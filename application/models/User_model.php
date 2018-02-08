@@ -40,9 +40,11 @@ class User_model extends CI_Model {
     // return false;
   }
 
-  public function userpost(){
-    $query = $this->db->query("SELECT users.nama, blogs.judul FROM users
-      INNER JOIN blogs USING('".$user_ID."')");
-      return $query->result_array();
-    }
+  public function userbyid($user_ID){
+    $sql = "SELECT nama FROM users WHERE user_ID = '".$user_ID."'";
+    $query = $this->db->query( $sql );
+    return $query->row_array();
+  }
+
+
 }

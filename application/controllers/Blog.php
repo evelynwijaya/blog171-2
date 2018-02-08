@@ -30,17 +30,37 @@ class Blog extends CI_Controller {
 
   public function submit()  {
      $this->blog_model->submit();
+
   $ext = pathinfo($_FILES['foto']['name'],PATHINFO_EXTENSION);
   $file = "./asset/images/blog/".$this->session->blog_id.".".$ext;
-  // echo $_FILES['foto']['tmp_name']."<br>";
-  // echo $file;
+
   move_uploaded_file($_FILES['foto']['tmp_name'],$file);
 
-  redirect('home');
+redirect('home');
   }
 
+ public function delete($blog_ID){
+   $this->blog_model->delete($blog_ID);
+   redirect('home');
 
- public function upload(){
+
  }
+
+ public function edit($blog_ID){
+   $data = $this->blog_model->blog($blog_ID);
+   $this->load->template('editblog',$data);
+ }
+
+ public function subedit($blog_ID){
+   $data = $this->blog_model->edit($blog_ID);
+   redirect('home');
+   // $this->load->template('editblog',$data);
+ }
+
+
+
+
+
+
 
 }

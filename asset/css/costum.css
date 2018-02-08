@@ -1,5 +1,11 @@
 #bt_edit {
-  color: #ff0;
+  color: #000;
+  text-align: center;
+}
+
+#bt_delete{
+  color: #f00;
+  text-align: center;
 }
 
 .btn.btn-primary {
@@ -34,4 +40,5 @@ img {
     border-style: none;
     width: 350px;
     height: 200px;
+  
 }
